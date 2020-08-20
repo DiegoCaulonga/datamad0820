@@ -1,10 +1,6 @@
 #Example: 
 
-eggs = (1,3,8,3,2)
 
-my_listComprehension = [1/egg for egg in eggs]
-
-print(my_listComprehension)
 
 #Insert here the module/library import statements 
 
@@ -20,13 +16,16 @@ print(my_listComprehension)
 #2. Calculate the first 50 power of two. Use power_of_two as the name of the list.
 # Remember to use list comprehensions and to print your results
 
+x = list(range(0,51))
+power_of_two = [i**2 for i in x]
+print(power_of_two)
+
 
 
 
 #3. Calculate the square root of the first 100 numbers. Use sqrt as the name of the list.
 # You will probably need to install math library with pip and import it in this file.  
 # Remember to use list comprehensions and to print your results
-
 
 
 
@@ -45,6 +44,9 @@ print(my_listComprehension)
 #6. Find all of the numbers from 1-1000 that are divisible by 7. Use divisible_by_seven as the name of the list.
 # Remember to use list comprehensions and to print your results
 
+range2 = range(0,1001)
+divisible_by_seven = [i for i in range2 if i%7 == 0]
+print(divisible_by_seven)
 
 
 
@@ -53,7 +55,7 @@ print(my_listComprehension)
 # You can use the following test string but feel free to modify at your convenience
 
 teststring = 'Find all of the words in a string that are monosyllabic'
-
+print(teststring)
 
 
 
@@ -89,8 +91,8 @@ teststring = 'Find all of the words in a string that are monosyllabic'
 # Remember to use list comprehensions and to print your results
 
 list_of_lists = [[1,2,3],[4,5,6],[7,8,9]]
-
-
+flatten_list = [i for sub in list_of_lists for i in sub]
+print(flatten_list)
 
 #13. Convert the numbers of the following nested list to floats. Use floats as the name of the list. 
 # Remember to use list comprehensions and to print your results.
@@ -99,24 +101,24 @@ list_of_lists = [['40', '20', '10', '30'], ['20', '20', '20', '20', '20', '30', 
 ['30', '20', '30', '50', '10', '30', '20', '20', '20'], ['100', '100'], ['100', '100', '100', '100', '100'], \
 ['100', '100', '100', '100']]
 
-
+floats = [float(i) for sub in list_of_lists for i in sub]
 
 
 #14. Handle the exception thrown by the code below by using try and except blocks. 
 
 
 for i in ['a','b','c']:
-    print i**2
+    try: 
+        print(i**2)
+    except:  
+        ("it can´t be squared")   
 
 
 #15. Handle the exception thrown by the code below by using try and except blocks. 
 #Then use a finally block to print 'All Done.'
 # Check in provided resources the type of error you may use. 
 
-x = 5
-y = 0
 
-z = x/y
 
 
 
@@ -125,7 +127,10 @@ z = x/y
 # Check in provided resources the type of error you may use. 
 
 abc=[10,20,20]
-print(abc[3])
+try:
+    print(abc[3])
+except:
+    print("there is no [3] in the list")    
 
 
 #17. Handle at least two kind of different exceptions when dividing a couple of numbers provided by the user. 
@@ -138,8 +143,6 @@ print(abc[3])
 #18. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
 
-f = open('testfile','r')
-f.write('Test write this')
 
 
 
@@ -147,9 +150,8 @@ f.write('Test write this')
 #19. Handle the exceptions that can be thrown by the code below using try and except blocks. 
 #Hint: the file could not exist and the data could not be convertable to int
 
-fp = open('myfile.txt')
-    line = f.readline()
-    i = int(s.strip())
+
+    
 
 
 
