@@ -54,7 +54,7 @@ projection: {name:1,founded_year:1}
 sort: {founded_year:1}
 
 SOLUTION 15:
-query : {$and:[{founded_day:{$gt:1}},{founded_day:{$lt:8}}]} 
+query : {$and:[{founded_day:{$gt:1,$lt:8}}]} 
 sort:{"acquisition.price_amount":1}
 limit:10
 
